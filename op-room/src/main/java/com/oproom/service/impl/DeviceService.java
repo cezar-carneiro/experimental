@@ -1,16 +1,18 @@
-package com.oproom.service;
+package com.oproom.service.impl;
 
 import android.content.Context;
 import android.os.Build;
 
 import com.oproom.model.DeviceInfo;
 import com.oproom.model.Stats;
+import com.oproom.service.BaseService;
+import com.oproom.service.IDeviceService;
 
 /**
  * Created by Cezar Carneiro on 16/1/2018.
  */
 
-public class DeviceService extends BaseService {
+public class DeviceService extends BaseService implements IDeviceService {
 
     public DeviceService(Context context) {
         super(context);

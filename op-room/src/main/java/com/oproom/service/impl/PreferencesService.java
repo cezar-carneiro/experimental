@@ -1,9 +1,10 @@
-package com.oproom.service;
+package com.oproom.service.impl;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 
 import com.oproom.model.PreferenceType;
+import com.oproom.service.IPreferenceService;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -16,7 +17,7 @@ import java.util.Set;
  * Created by Cezar Carneiro on 16/1/2018.
  */
 
-public class PreferencesService extends com.oproom.service.BaseService {
+public class PreferencesService extends com.oproom.service.BaseService implements IPreferenceService {
 
     public PreferencesService(Context context) {
         super(context);

@@ -7,7 +7,7 @@ import com.koushikdutta.async.http.server.AsyncHttpServerRequest;
 import com.koushikdutta.async.http.server.AsyncHttpServerResponse;
 import com.oproom.http.endpoint.BaseEndpoint;
 import com.oproom.model.DirectoryInfo;
-import com.oproom.service.FileSystemService;
+import com.oproom.service.impl.FileSystemService;
 
 /**
  * Created by Cezar Carneiro on 24/1/2018.

@@ -9,7 +9,7 @@ import com.koushikdutta.async.http.server.AsyncHttpServerRequest;
 import com.koushikdutta.async.http.server.AsyncHttpServerResponse;
 import com.koushikdutta.async.stream.OutputStreamDataCallback;
 import com.oproom.http.endpoint.BaseEndpoint;
-import com.oproom.service.FileSystemService;
+import com.oproom.service.impl.FileSystemService;
 import com.oproom.util.Holder;
 import com.oproom.util.Strings;
 

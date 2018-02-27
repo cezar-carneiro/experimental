@@ -8,7 +8,7 @@ import com.oproom.http.DefaultResponse;
 import com.oproom.http.Http;
 import com.oproom.http.endpoint.BaseEndpoint;
 import com.oproom.model.Preference;
-import com.oproom.service.PreferencesService;
+import com.oproom.service.impl.PreferencesService;
 
 /**
  * Created by Cezar Carneiro on 22/1/2018.

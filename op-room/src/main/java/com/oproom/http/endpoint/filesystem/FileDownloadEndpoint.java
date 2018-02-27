@@ -6,7 +6,7 @@ import com.koushikdutta.async.http.Multimap;
 import com.koushikdutta.async.http.server.AsyncHttpServerRequest;
 import com.koushikdutta.async.http.server.AsyncHttpServerResponse;
 import com.oproom.http.endpoint.BaseEndpoint;
-import com.oproom.service.FileSystemService;
+import com.oproom.service.impl.FileSystemService;
 import com.oproom.util.Strings;
 
 import java.io.File;

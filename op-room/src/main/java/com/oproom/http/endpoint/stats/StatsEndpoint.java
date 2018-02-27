@@ -6,7 +6,7 @@ import com.koushikdutta.async.http.server.AsyncHttpServerRequest;
 import com.koushikdutta.async.http.server.AsyncHttpServerResponse;
 import com.oproom.http.endpoint.BaseEndpoint;
 import com.oproom.model.Stats;
-import com.oproom.service.DeviceService;
+import com.oproom.service.impl.DeviceService;
 
 /**
  * Created by Cezar Carneiro on 16/1/2018.

@@ -6,7 +6,7 @@ import com.koushikdutta.async.http.server.AsyncHttpServerRequest;
 import com.koushikdutta.async.http.server.AsyncHttpServerResponse;
 import com.oproom.http.endpoint.BaseEndpoint;
 import com.oproom.model.Clipboard;
-import com.oproom.service.ClipboardService;
+import com.oproom.service.impl.ClipboardService;
 
 /**
  * Created by Cezar Carneiro on 24/1/2018.

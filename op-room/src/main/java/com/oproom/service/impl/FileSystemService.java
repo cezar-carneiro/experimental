@@ -1,9 +1,11 @@
-package com.oproom.service;
+package com.oproom.service.impl;
 
 import android.content.Context;
 
 import com.oproom.model.DirectoryInfo;
 import com.oproom.model.FileEntryInfo;
+import com.oproom.service.BaseService;
+import com.oproom.service.IFileSystemService;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -14,7 +16,7 @@ import java.io.OutputStream;
  * Created by Cezar Carneiro on 24/1/2018.
  */
 
-public class FileSystemService extends BaseService {
+public class FileSystemService extends BaseService implements IFileSystemService {
 
     public FileSystemService(Context context) {
         super(context);

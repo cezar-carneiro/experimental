@@ -6,7 +6,8 @@ import com.koushikdutta.async.http.server.AsyncHttpServerRequest;
 import com.koushikdutta.async.http.server.AsyncHttpServerResponse;
 import com.oproom.http.endpoint.BaseEndpoint;
 import com.oproom.model.Clipboard;
-import com.oproom.service.ClipboardService;
+import com.oproom.service.IClipboardService;
+import com.oproom.service.impl.ClipboardService;
 
 /**
  * Created by Cezar Carneiro on 23/1/2018.
@@ -14,7 +15,7 @@ import com.oproom.service.ClipboardService;
 
 public class ClipboardEndpoint extends BaseEndpoint {
 
-    private ClipboardService mService;
+    private IClipboardService mService;
 
     public ClipboardEndpoint(Context context) {
         super(context);

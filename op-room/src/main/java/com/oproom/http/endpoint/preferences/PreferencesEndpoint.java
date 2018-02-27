@@ -7,7 +7,7 @@ import com.koushikdutta.async.http.server.AsyncHttpServerRequest;
 import com.koushikdutta.async.http.server.AsyncHttpServerResponse;
 import com.oproom.http.Http;
 import com.oproom.http.endpoint.BaseEndpoint;
-import com.oproom.service.PreferencesService;
+import com.oproom.service.impl.PreferencesService;
 import com.oproom.util.Strings;
 
 /**
