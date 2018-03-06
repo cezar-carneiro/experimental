@@ -14,17 +14,16 @@ import java.util.List;
 public interface IDatabaseService {
 
     List<String> getDatabases();
-    DatabaseInfo getDatabaseInfo();
-    boolean deleteDatabase();
+    DatabaseInfo getDatabaseInfo(String databaseName);
+    boolean deleteDatabase(String databaseName);
 
-    TableInfo getTableInfo(String name);
-    TableInfo getViewInfo(String name);
-    IndexInfo getIndexInfo(String name);
+    TableInfo getTableInfo(String databaseName, String tableName);
+    TableInfo getViewInfo(String databaseName, String viewName);
+    IndexInfo getIndexInfo(String databaseName, String indexName);
 
-    void dropTable(String name);
-    void truncateTable(String name);
-    void createTable();
+    void dropTable(String databaseName, String tableName);
+    void truncateTable(String databaseName, String tableName);
 
-    QueryResponse execQuery();
+    QueryResponse execQuery(String databaseName, String sql);
 
 }

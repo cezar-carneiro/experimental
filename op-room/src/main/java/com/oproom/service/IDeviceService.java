@@ -11,5 +11,6 @@ public interface IDeviceService {
 
     DeviceInfo getDeviceInfo();
     Stats getLiveStats();
+    void runGarbageCollector();
 
 }

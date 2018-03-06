@@ -48,4 +48,9 @@ public class DeviceService extends BaseService implements IDeviceService {
 
         return stats;
     }
+
+    @Override
+    public void runGarbageCollector() {
+        System.gc();
+    }
 }
