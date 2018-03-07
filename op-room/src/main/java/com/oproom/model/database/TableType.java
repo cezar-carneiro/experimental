@@ -4,5 +4,8 @@ package com.oproom.model.database;
  * Created by Cezar Carneiro on 27/02/2018.
  */
 
-public class QueryResponse {
+public enum TableType {
+    TABLE,
+    VIEW,
+    INDEX
 }

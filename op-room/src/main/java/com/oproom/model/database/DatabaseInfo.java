@@ -13,9 +13,7 @@ public class DatabaseInfo {
     private Integer version;
     private Long maximumSize;
     private Long pageSize;
-    private List<String> tables;
-    private List<String> views;
-    private List<String> indices;
+    private List<TableInfo> tables;
 
     public DatabaseInfo() {
     }
@@ -60,27 +58,11 @@ public class DatabaseInfo {
         this.pageSize = pageSize;
     }
 
-    public List<String> getTables() {
+    public List<TableInfo> getTables() {
         return tables;
     }
 
-    public void setTables(List<String> tables) {
+    public void setTables(List<TableInfo> tables) {
         this.tables = tables;
-    }
-
-    public List<String> getViews() {
-        return views;
-    }
-
-    public void setViews(List<String> views) {
-        this.views = views;
-    }
-
-    public List<String> getIndices() {
-        return indices;
-    }
-
-    public void setIndices(List<String> indices) {
-        this.indices = indices;
     }
 }

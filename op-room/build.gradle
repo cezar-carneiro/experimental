@@ -4,7 +4,6 @@ android {
     compileSdkVersion 26
     buildToolsVersion "26.0.2"
 
-
     defaultConfig {
         minSdkVersion 16
         targetSdkVersion 26
@@ -34,5 +33,4 @@ dependencies {
 
     compile 'com.koushikdutta.async:androidasync:2.2.1'
     compile 'com.google.code.gson:gson:2.8.2'
-
 }

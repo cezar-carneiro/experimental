@@ -1,9 +1,7 @@
 package com.oproom.service;
 
 import com.oproom.model.database.DatabaseInfo;
-import com.oproom.model.database.IndexInfo;
-import com.oproom.model.database.QueryResponse;
-import com.oproom.model.database.TableInfo;
+import com.oproom.model.database.SQLResponse;
 
 import java.util.List;
 
@@ -17,13 +15,12 @@ public interface IDatabaseService {
     DatabaseInfo getDatabaseInfo(String databaseName);
     boolean deleteDatabase(String databaseName);
 
-    TableInfo getTableInfo(String databaseName, String tableName);
-    TableInfo getViewInfo(String databaseName, String viewName);
-    IndexInfo getIndexInfo(String databaseName, String indexName);
+    SQLResponse dropTable(String databaseName, String tableName);
+    SQLResponse dropIndex(String databaseName, String indexName);
+    SQLResponse dropView(String databaseName, String viewName);
 
-    void dropTable(String databaseName, String tableName);
     void truncateTable(String databaseName, String tableName);
 
-    QueryResponse execQuery(String databaseName, String sql);
+    SQLResponse execSQL(String databaseName, String sql);
 
 }
