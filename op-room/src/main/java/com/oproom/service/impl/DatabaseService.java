@@ -4,6 +4,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.oproom.model.database.ColumnType;
 import com.oproom.model.database.DatabaseInfo;
 import com.oproom.model.database.SQLResponse;
 import com.oproom.model.database.TableInfo;
@@ -114,7 +115,86 @@ public class DatabaseService extends BaseService implements IDatabaseService {
 
     @Override
     public SQLResponse execSQL(String databaseName, String sql) {
-        return null;
+        long before = System.currentTimeMillis();
+        SQLResponse response = new SQLResponse();
+        String databasePath = getDatabasePath(databaseName);
+        SQLiteDatabase db = openDatabase(databasePath);
+        try {
+            Cursor cursor = db.rawQuery(sql, null);
+            response.setCount(cursor.getCount());
+            response.setColumns(cursor.getColumnNames());
+            try {
+                response.setColumnTypes(getColumnTypes(cursor));
+                response.setRows(getRows(cursor));
+            } catch (Exception e){
+                response.setSuccessful(false);
+            } finally {
+                cursor.close();
+            }
+        } catch (Exception e){
+            response.setSuccessful(false);
+        } finally {
+            db.close();
+        }
+
+        response.setSuccessful(true);
+        long after = System.currentTimeMillis();
+        response.setDuration(after - before);
+        return response;
+    }
+
+    private ColumnType[] getColumnTypes(Cursor cursor){
+        ColumnType[] types = new ColumnType[cursor.getCount()];
+        for (int i = 0; i < cursor.getCount(); i++) {
+            switch (cursor.getType(i)) {
+                case Cursor.FIELD_TYPE_INTEGER:
+                    types[i] = ColumnType.INTEGER;
+                    break;
+                case Cursor.FIELD_TYPE_FLOAT:
+                    types[i] = ColumnType.FLOAT;
+                    break;
+                case Cursor.FIELD_TYPE_BLOB:
+                    types[i] = ColumnType.BLOB;
+                    break;
+                case Cursor.FIELD_TYPE_STRING:
+                    types[i] = ColumnType.STRING;
+                    break;
+                default:
+                    types[i] = ColumnType.UNKNOWN;
+                    break;
+            }
+        }
+        return types;
+    }
+
+    private String[][] getRows(Cursor cursor){
+        int columnCount = cursor.getColumnCount();
+        String[][] rows = new String[cursor.getCount()][];
+        for(int i = 0; cursor.moveToNext(); i++) {
+            String[] row = new String[columnCount];
+            for(int j = 0; j < columnCount; j++){
+                switch (cursor.getType(j)) {
+                    case Cursor.FIELD_TYPE_NULL:
+                        row[j] = "NULL";
+                        break;
+                    case Cursor.FIELD_TYPE_INTEGER:
+                        row[j] = String.valueOf(cursor.getLong(j));
+                        break;
+                    case Cursor.FIELD_TYPE_FLOAT:
+                        row[j] = String.valueOf(cursor.getDouble(j));
+                        break;
+                    case Cursor.FIELD_TYPE_BLOB:
+                        row[j] = "[BLOB]";
+                        break;
+                    case Cursor.FIELD_TYPE_STRING:
+                    default:
+                        row[j] = cursor.getString(j);
+                        break;
+                }
+            }
+            rows[i] = row;
+        }
+        return rows;
     }
 
 }

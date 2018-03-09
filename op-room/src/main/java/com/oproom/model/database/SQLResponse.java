@@ -12,8 +12,9 @@ public class SQLResponse {
 
     private Integer count;
     private Long duration;
-    private List<String> columns;
-    private List<List<String>> rows;
+    private String[] columns;
+    private ColumnType[] columnTypes;
+    private String[][] rows;
 
     public SQLResponse() {
     }
@@ -50,19 +51,27 @@ public class SQLResponse {
         this.duration = duration;
     }
 
-    public List<String> getColumns() {
+    public String[] getColumns() {
         return columns;
     }
 
-    public void setColumns(List<String> columns) {
+    public void setColumns(String[] columns) {
         this.columns = columns;
     }
 
-    public List<List<String>> getRows() {
+    public ColumnType[] getColumnTypes() {
+        return columnTypes;
+    }
+
+    public void setColumnTypes(ColumnType[] columnTypes) {
+        this.columnTypes = columnTypes;
+    }
+
+    public String[][] getRows() {
         return rows;
     }
 
-    public void setRows(List<List<String>> rows) {
+    public void setRows(String[][] rows) {
         this.rows = rows;
     }
 }
