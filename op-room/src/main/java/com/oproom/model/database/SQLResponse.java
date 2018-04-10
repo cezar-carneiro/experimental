@@ -1,7 +1,5 @@
 package com.oproom.model.database;
 
-import java.util.List;
-
 /**
  * Created by Cezar Carneiro on 27/02/2018.
  */
