@@ -1,4 +1,4 @@
-package com.oproom.http.endpoint.filesystem;
+package com.oproom.http.handler.filesystem;
 
 import android.content.Context;
 
@@ -8,7 +8,7 @@ import com.koushikdutta.async.http.body.Part;
 import com.koushikdutta.async.http.server.AsyncHttpServerRequest;
 import com.koushikdutta.async.http.server.AsyncHttpServerResponse;
 import com.koushikdutta.async.stream.OutputStreamDataCallback;
-import com.oproom.http.endpoint.BaseEndpoint;
+import com.oproom.http.handler.BaseHandler;
 import com.oproom.service.impl.FileSystemService;
 import com.oproom.util.Holder;
 import com.oproom.util.Strings;
@@ -21,11 +21,11 @@ import java.io.OutputStream;
  *
  * I don't really like this implementation but that's what I can do for now.
  */
-public class FileUploadEndpoint extends BaseEndpoint{
+public class FileUploadHandler extends BaseHandler {
 
     private FileSystemService mService;
 
-    public FileUploadEndpoint(Context context) {
+    public FileUploadHandler(Context context) {
         super(context);
         this.mService = new FileSystemService(context);
     }
